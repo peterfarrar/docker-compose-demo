@@ -1,0 +1,22 @@
+version: '3'
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "6379:6379"
+
+  redis-api:
+    build:
+      dockerfile: Dockerfile
+      context: ./redis-api
+    container_name: redis-api
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
