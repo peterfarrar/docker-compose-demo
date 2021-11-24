@@ -1,6 +1,6 @@
 # Docker Compose Demo
 ## What is it?
-This is a very simple example of using a redis container and a node app to be deployed with docker-compose
+This is a very simple example deploying a redis container and a node app together with docker-compose
 
 ### To run it
 ```
